@@ -1,0 +1,19 @@
+﻿@model UrunTakipSistemi.Models.Entity.TblKategori
+
+@{
+    ViewBag.Title = "KategoriGetir";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h3 style="text-align:center;font-size:55px;font-family:'Times New Roman';margin-bottom:50px;">KATEGORİ DÜZENLEME</h3>
+
+@using (Html.BeginForm("KategoriGuncelle", "Kategori", FormMethod.Post))
+{
+    <label>Kategori Adı</label>
+    @Html.TextBoxFor(ktgr => ktgr.Ad, new { @class = "form-control" })
+    <br />
+
+    @Html.HiddenFor(ktgr => ktgr.Id)
+    <button class="btn btn-warning">Güncelle</button>
+
+}

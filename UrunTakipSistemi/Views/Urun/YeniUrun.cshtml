@@ -1,0 +1,37 @@
+﻿@model UrunTakipSistemi.Models.Entity.TblUrunler
+@{
+    ViewBag.Title = "YeniUrun";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h3 style="text-align:center;font-size:55px;font-family:'Times New Roman';margin-bottom:50px;">YENİ ÜRÜN EKLEME</h3>
+
+<form method="post">
+
+    <label>Ürün Adını Giriniz</label>
+    @Html.TextBoxFor(urn => urn.Ad, new { @class = "form-control" })
+    <br />
+
+    <label>Ürün Markasını Giriniz</label>
+    @Html.TextBoxFor(urn => urn.Marka, new { @class = "form-control" })
+    <br />
+
+    <label>Ürün Stok Sayısını Giriniz</label>
+    @Html.TextBoxFor(urn => urn.Stok, new { @class = "form-control" })
+    <br />
+
+    <label>Ürün Alış Fiyatını Giriniz</label>
+    @Html.TextBoxFor(urn => urn.AlisFiyat, new { @class = "form-control" })
+    <br />
+
+    <label>Ürün Satış Fiyatını Giriniz</label>
+    @Html.TextBoxFor(urn => urn.SatisFiyat, new { @class = "form-control" })
+    <br />
+
+
+    <label>Ürün Kategorisini Giriniz</label>
+    @Html.DropDownListFor(ktgr => ktgr.TblKategori.Id, (List<SelectListItem>)ViewBag.drop, new { @class = "form-control" })
+    <br />
+
+    <button class="btn btn-info">Ekle</button>
+</form>

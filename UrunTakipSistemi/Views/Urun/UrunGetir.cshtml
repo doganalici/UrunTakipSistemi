@@ -1,0 +1,41 @@
+﻿@model UrunTakipSistemi.Models.Entity.TblUrunler
+@{
+    ViewBag.Title = "UrunGetir";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+<h3 style="text-align:center;font-size:55px;font-family:'Times New Roman';margin-bottom:50px;">ÜRÜN DÜZENLEME</h3>
+
+@using (Html.BeginForm("UrunGuncelle", "Urun", FormMethod.Post))
+{
+
+    <label>Ürün Adı</label>
+    @Html.TextBoxFor(urn => urn.Ad, new { @class = "form-control" })
+    <br />
+
+    <label>Marka Adı</label>
+    @Html.TextBoxFor(urn => urn.Marka, new { @class = "form-control" })
+    <br />
+
+    <label>Stok Adedi</label>
+    @Html.TextBoxFor(urn => urn.Stok, new { @class = "form-control" })
+    <br />
+
+    <label>Alış Fiyatı</label>
+    @Html.TextBoxFor(urn => urn.AlisFiyat, new { @class = "form-control" })
+    <br />
+
+    <label>Satış Fiyatı</label>
+    @Html.TextBoxFor(urn => urn.SatisFiyat, new { @class = "form-control" })
+    <br />
+
+    <label>Kategori Adı</label>
+    @Html.TextBoxFor(urn => urn.Kategori, new { @class = "form-control" })
+    <br />
+
+
+    @Html.HiddenFor(urn => urn.Id)
+    <button class="btn btn-warning">Güncelle</button>
+
+}

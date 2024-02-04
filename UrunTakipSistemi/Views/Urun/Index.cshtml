@@ -1,0 +1,42 @@
+﻿@using UrunTakipSistemi.Models.Entity
+@model List<TblUrunler>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h3 style="text-align:center;font-size:55px;font-family:'Times New Roman';">ÜRÜNLER</h3>
+
+
+<table class="table table-bordered">
+    <tr>
+        <th>ID</th>
+        <th>ÜRÜN ADI</th>
+        <th>ÜRÜN MARKA</th>
+        <th>ÜRÜN STOK</th>
+        <th>ÜRÜN ALIŞ FİYATI</th>
+        <th>ÜRÜN SATIŞ FİYATI</th>
+        <th>ÜRÜN KATEGORİ</th>
+        @*<th>SİL</th>
+            <th>GÜNCELLE</th>*@
+        <th>İŞLEMLER</th>
+    </tr>
+
+    @foreach (var urn in Model)
+    {
+        <tr>
+            <td>@urn.Id</td>
+            <td>@urn.Ad</td>
+            <td>@urn.Marka</td>
+            <td>@urn.Stok</td>
+            <td>@urn.AlisFiyat</td>
+            <td>@urn.SatisFiyat</td>
+            <td>@urn.TblKategori.Ad</td>
+            <td>
+                <a href="/Urun/UrunSil/@urn.Id" class="btn btn-danger" style="margin-right:10px;">Sil</a>
+                <a href="/Urun/UrunGetir/@urn.Id" class="btn btn-success">Güncelle</a>
+            </td>
+        </tr>
+    }
+</table>
+<a href="/Urun/YeniUrun" class="btn btn-primary">Yeni Ürün</a>
